@@ -1,0 +1,11 @@
+TARGET GITHUB REPOSITORY: https://github.com/25r01a05ez-sudo/krishinetra01
+
+1. Extract this zip.
+2. Open the INNER krishinetra folder.
+3. Double click PUSH_TO_GITHUB.bat (requires Git for Windows).
+4. Sign into GitHub when your browser opens.
+5. Verify the repository link printed at the end.
+
+DO NOT upload backend/.env, or your API key.
+The app is not deployed until a Render Web Service is created.
+See DEPLOY_TO_GITHUB_RENDER.md.

@@ -1,0 +1,384 @@
+/**
+ * KrishiNetra — Crop Disease Reference Database
+ * 20 educational disease entries covering: Tomato, Potato, Rice, Wheat, Cucumber/Melon, Maize, Chilli/Pepper, Banana
+ *
+ * DISCLAIMER: Reference-only educational information. This is NOT a pesticide recommendation.
+ * Trained adults and local agricultural advisers must verify a confirmed diagnosis and current official label.
+ */
+
+export const DISEASE_DB_META = {
+  project: 'KrishiNetra',
+  team: 'Proxy Pirates',
+  version: '1.0.0-educational',
+  regulatoryStatus: 'UNVERIFIED - educational reference only',
+  disclaimer:
+    'Reference-only educational information. This is NOT a pesticide recommendation, dosage, mixing, purchase, or application instruction. Approval, effectiveness, hazards and resistance differ by crop, region and product. Trained adults and local agricultural advisers must verify a confirmed diagnosis and current official label.',
+};
+
+export const DISEASES = [
+  {
+    id: 'TOM-001',
+    crop: 'Tomato',
+    disease: 'Early blight',
+    causalAgent: 'Alternaria solani',
+    causeType: 'fungal',
+    symptoms: ['Brown target-like rings on older leaves', 'yellowing and leaf drop'],
+    pesticideCategory: 'Fungicides (protectant / systemic)',
+    exampleActiveIngredients: ['Mancozeb', 'azoxystrobin'],
+    nonchemicalPrevention: ['Use healthy transplants', 'rotate crops', 'clear infected debris', 'limit leaf wetness'],
+    expertCheck: 'Seek confirmation because early blight resembles other tomato leaf spots.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'TOM-002',
+    crop: 'Tomato / potato',
+    disease: 'Late blight',
+    causalAgent: 'Phytophthora infestans',
+    causeType: 'oomycete',
+    symptoms: ['Fast-spreading water-soaked dark lesions', 'possible white growth in humid weather'],
+    pesticideCategory: 'Oomycete-targeted fungicides',
+    exampleActiveIngredients: ['Mandipropamid', 'cymoxanil'],
+    nonchemicalPrevention: ['Use disease-free planting material', 'remove volunteer plants', 'improve airflow', 'monitor after cool, wet weather'],
+    expertCheck: 'Potentially fast-moving outbreak: obtain local extension advice promptly.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'TOM-003',
+    crop: 'Tomato',
+    disease: 'Septoria leaf spot',
+    causalAgent: 'Septoria lycopersici',
+    causeType: 'fungal',
+    symptoms: ['Many small round leaf spots with dark margins and pale centers'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Copper-based compounds', 'azoxystrobin'],
+    nonchemicalPrevention: ['Remove diseased leaf debris', 'rotate crops', 'water at soil level', 'provide spacing'],
+    expertCheck: 'Confirm the diagnosis before choosing any management product.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'TOM-004',
+    crop: 'Tomato / pepper',
+    disease: 'Bacterial spot',
+    causalAgent: 'Xanthomonas species',
+    causeType: 'bacterial',
+    symptoms: ['Small dark leaf spots', 'some water-soaked lesions', 'rough fruit spots'],
+    pesticideCategory: 'Copper-based bactericides (variable efficacy)',
+    exampleActiveIngredients: ['Copper hydroxide', 'copper oxychloride'],
+    nonchemicalPrevention: ['Use tested disease-free seeds', 'avoid handling wet foliage', 'sanitize tools', 'remove affected debris'],
+    expertCheck: 'Copper tolerance or resistance can limit effectiveness.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'TOM-005',
+    crop: 'Tomato',
+    disease: 'Tomato yellow leaf curl disease',
+    causalAgent: 'Tomato yellow leaf curl virus complex',
+    causeType: 'viral',
+    symptoms: ['Upward-curled leaves', 'yellow margins', 'stunted plants'],
+    pesticideCategory: 'No pesticide cures a virus; vector-management category only',
+    exampleActiveIngredients: [],
+    nonchemicalPrevention: ['Use resistant varieties', 'monitor whiteflies', 'keep nurseries protected', 'remove weeds that host vectors'],
+    expertCheck: 'Confirm virus and vector; pesticide is not a cure.',
+    curativeChemicalAvailable: false,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'TOM-006',
+    crop: 'Tomato',
+    disease: 'Fusarium wilt',
+    causalAgent: 'Fusarium oxysporum f. sp. lycopersici',
+    causeType: 'fungal / soilborne',
+    symptoms: ['Progressive yellowing, sometimes one-sided', 'wilting and vascular browning'],
+    pesticideCategory: 'No reliable curative foliar pesticide',
+    exampleActiveIngredients: [],
+    nonchemicalPrevention: ['Choose resistant cultivars', 'rotate with non-host crops', 'use clean growing media', 'consider grafted plants'],
+    expertCheck: 'Consider lab diagnosis; water stress and bacterial wilt can appear similar.',
+    curativeChemicalAvailable: false,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'POT-007',
+    crop: 'Potato',
+    disease: 'Common scab',
+    causalAgent: 'Streptomyces scabiei and related species',
+    causeType: 'bacterial / soilborne',
+    symptoms: ['Rough, corky, raised or pitted lesions on tuber surfaces'],
+    pesticideCategory: 'No reliable post-infection chemical cure',
+    exampleActiveIngredients: [],
+    nonchemicalPrevention: ['Plant certified seed', 'rotate crops', 'maintain suitable soil conditions and consistent moisture at tuber initiation'],
+    expertCheck: 'Avoid changing soil chemistry without local agronomic advice.',
+    curativeChemicalAvailable: false,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'RIC-008',
+    crop: 'Rice',
+    disease: 'Rice blast',
+    causalAgent: 'Magnaporthe oryzae',
+    causeType: 'fungal',
+    symptoms: ['Diamond- or spindle-shaped spots with gray centers and brown borders'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Tricyclazole', 'azoxystrobin'],
+    nonchemicalPrevention: ['Use resistant varieties', 'avoid excess nitrogen', 'monitor nursery and field', 'maintain field hygiene'],
+    expertCheck: 'Confirm field diagnosis and local product registration.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'RIC-009',
+    crop: 'Rice',
+    disease: 'Bacterial leaf blight',
+    causalAgent: 'Xanthomonas oryzae pv. oryzae',
+    causeType: 'bacterial',
+    symptoms: ['Yellow to pale lesions spreading from leaf tips or margins', 'wavy edges'],
+    pesticideCategory: 'No dependable curative pesticide',
+    exampleActiveIngredients: [],
+    nonchemicalPrevention: ['Grow resistant cultivars', 'use healthy seed', 'balance fertilizer', 'prevent movement of infected plant residue'],
+    expertCheck: 'Copper products are not a reliable general cure.',
+    curativeChemicalAvailable: false,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'RIC-010',
+    crop: 'Rice',
+    disease: 'Sheath blight',
+    causalAgent: 'Rhizoctonia solani',
+    causeType: 'fungal',
+    symptoms: ['Oval gray-green to tan lesions on rice leaf sheaths'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Validamycin', 'azoxystrobin'],
+    nonchemicalPrevention: ['Avoid dense planting and excess nitrogen', 'manage residue', 'improve crop airflow'],
+    expertCheck: 'Confirm fungicide suitability for rice in your area.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'WHT-011',
+    crop: 'Wheat',
+    disease: 'Leaf rust',
+    causalAgent: 'Puccinia triticina',
+    causeType: 'fungal',
+    symptoms: ['Small orange-brown powdery pustules scattered on wheat leaves'],
+    pesticideCategory: 'Triazole / other labeled fungicides',
+    exampleActiveIngredients: ['Tebuconazole', 'propiconazole'],
+    nonchemicalPrevention: ['Choose resistant cultivars', 'monitor early symptoms', 'reduce volunteer wheat hosts'],
+    expertCheck: 'Rust identification is important; distinguish from stripe rust.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'WHT-012',
+    crop: 'Wheat',
+    disease: 'Stripe rust (yellow rust)',
+    causalAgent: 'Puccinia striiformis f. sp. tritici',
+    causeType: 'fungal',
+    symptoms: ['Yellow-orange pustules arranged in stripes along leaf veins'],
+    pesticideCategory: 'Triazole / other labeled fungicides',
+    exampleActiveIngredients: ['Tebuconazole', 'propiconazole'],
+    nonchemicalPrevention: ['Use resistant varieties', 'scout during cool, damp periods', 'follow local rust alerts'],
+    expertCheck: 'Local alert services can help with early outbreak response.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'WHT-013',
+    crop: 'Wheat',
+    disease: 'Powdery mildew',
+    causalAgent: 'Blumeria graminis f. sp. tritici',
+    causeType: 'fungal',
+    symptoms: ['White powdery colonies on leaves and stems', 'later gray-brown areas'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Tebuconazole', 'azoxystrobin'],
+    nonchemicalPrevention: ['Use resistant varieties', 'reduce excessive nitrogen', 'select suitable plant density'],
+    expertCheck: 'Wheat and cucumber powdery mildews are not the same pathogen.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'CUC-014',
+    crop: 'Cucumber / melon',
+    disease: 'Powdery mildew',
+    causalAgent: 'Podosphaera xanthii and related species',
+    causeType: 'fungal',
+    symptoms: ['White powdery patches on upper or lower leaf surfaces'],
+    pesticideCategory: 'Sulfur-based / bicarbonate fungicides',
+    exampleActiveIngredients: ['Sulfur', 'potassium bicarbonate'],
+    nonchemicalPrevention: ['Grow resistant varieties', 'avoid crowding', 'improve airflow', 'monitor leaf undersides'],
+    expertCheck: 'Product phytotoxicity and local labels matter; do not assume all crops tolerate them.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'CUC-015',
+    crop: 'Cucumber / melon',
+    disease: 'Downy mildew',
+    causalAgent: 'Pseudoperonospora cubensis',
+    causeType: 'oomycete',
+    symptoms: ['Angular yellow spots bounded by veins', 'gray-purple growth beneath leaves in humidity'],
+    pesticideCategory: 'Oomycete-targeted fungicides',
+    exampleActiveIngredients: ['Mandipropamid', 'cymoxanil'],
+    nonchemicalPrevention: ['Reduce prolonged leaf wetness', 'improve airflow', 'monitor during wet periods', 'remove crop residues'],
+    expertCheck: 'Do not confuse with powdery mildew; chemical classes differ.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'CUC-016',
+    crop: 'Cucumber / other vegetables',
+    disease: 'Cucumber mosaic disease',
+    causalAgent: 'Cucumber mosaic virus',
+    causeType: 'viral',
+    symptoms: ['Light/dark green mosaic leaves', 'distorted leaves', 'stunted growth'],
+    pesticideCategory: 'No pesticide cures a virus; insect-vector management only',
+    exampleActiveIngredients: [],
+    nonchemicalPrevention: ['Use healthy planting material', 'control weeds that host virus', 'encourage vector monitoring', 'sanitize tools'],
+    expertCheck: 'Aphid-related transmission may be rapid; insecticides alone may not prevent it.',
+    curativeChemicalAvailable: false,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'MAI-017',
+    crop: 'Maize',
+    disease: 'Northern corn leaf blight',
+    causalAgent: 'Exserohilum turcicum',
+    causeType: 'fungal',
+    symptoms: ['Long cigar-shaped gray-green to brown lesions on maize leaves'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Azoxystrobin', 'propiconazole'],
+    nonchemicalPrevention: ['Grow tolerant hybrids', 'rotate with non-host crops', 'manage infected residue', 'scout lower leaves'],
+    expertCheck: 'Assess crop stage and confirmed disease before considering interventions.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'MAI-018',
+    crop: 'Maize',
+    disease: 'Gray leaf spot',
+    causalAgent: 'Cercospora zeae-maydis',
+    causeType: 'fungal',
+    symptoms: ['Rectangular gray or tan leaf lesions often limited by veins'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Azoxystrobin', 'propiconazole'],
+    nonchemicalPrevention: ['Use resistant hybrids', 'rotate crops', 'manage crop residue', 'improve airflow'],
+    expertCheck: 'Distinguish from northern corn leaf blight and nutrient injury.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'CHI-019',
+    crop: 'Chilli / pepper',
+    disease: 'Anthracnose (fruit rot)',
+    causalAgent: 'Colletotrichum species',
+    causeType: 'fungal',
+    symptoms: ['Sunken dark fruit lesions', 'sometimes salmon or orange spore masses'],
+    pesticideCategory: 'Fungicides',
+    exampleActiveIngredients: ['Azoxystrobin', 'copper oxychloride'],
+    nonchemicalPrevention: ['Use clean seeds', 'remove symptomatic fruit', 'avoid overhead watering', 'rotate crops'],
+    expertCheck: 'Some species differ in fungicide sensitivity; confirm locally.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+  {
+    id: 'BAN-020',
+    crop: 'Banana',
+    disease: 'Black Sigatoka',
+    causalAgent: 'Pseudocercospora fijiensis',
+    causeType: 'fungal',
+    symptoms: ['Dark leaf streaks expanding into necrotic patches', 'loss of green leaf tissue'],
+    pesticideCategory: 'Triazole / other labeled fungicides',
+    exampleActiveIngredients: ['Propiconazole', 'difenoconazole'],
+    nonchemicalPrevention: ['Use tolerant planting material', 'prune severely affected tissue responsibly', 'improve plantation airflow'],
+    expertCheck: 'Confirm whether black or yellow Sigatoka; management varies.',
+    curativeChemicalAvailable: null,
+    humanReviewed: false,
+    isModelSupported: false,
+  },
+];
+
+/**
+ * Look up a disease by name (case-insensitive fuzzy match).
+ * Returns the entry or null.
+ */
+export function findDisease(query) {
+  if (!query || typeof query !== 'string') return null;
+  const q = query.toLowerCase().trim();
+  // Exact match first
+  const exact = DISEASES.find((d) => d.disease.toLowerCase() === q);
+  if (exact) return exact;
+  // Partial match
+  return DISEASES.find((d) => d.disease.toLowerCase().includes(q) || q.includes(d.disease.toLowerCase())) || null;
+}
+
+/**
+ * Convert a disease entry into the normalised guidance format used by the UI.
+ */
+export function diseaseToGuidance(entry) {
+  if (!entry) return null;
+  const noCure = entry.curativeChemicalAvailable === false;
+  const management = [];
+  if (entry.pesticideCategory) {
+    management.push(`Category: ${entry.pesticideCategory}`);
+  }
+  if (entry.exampleActiveIngredients?.length) {
+    management.push(`Example active ingredients (verify local labels): ${entry.exampleActiveIngredients.join(', ')}`);
+  }
+  if (noCure) {
+    management.push('No reliable curative chemical treatment is available for this disease.');
+  }
+
+  return {
+    name: entry.disease,
+    crop: entry.crop,
+    summary: `${entry.disease} is caused by ${entry.causalAgent} (${entry.causeType}). ${entry.expertCheck}`,
+    symptoms: entry.symptoms || [],
+    preventive: entry.nonchemicalPrevention || [],
+    management,
+    immediate: [],
+    monitoring: [],
+    expert: [
+      entry.expertCheck,
+      DISEASE_DB_META.disclaimer,
+    ],
+    general: [],
+    imageUrl: null,
+  };
+}
+
+/**
+ * Get all diseases for a given crop (case-insensitive).
+ */
+export function getDiseasesByCrop(crop) {
+  if (!crop) return [];
+  const q = crop.toLowerCase().trim();
+  return DISEASES.filter((d) => d.crop.toLowerCase().includes(q));
+}
+
+/**
+ * Get all unique crop names from the database.
+ */
+export function getAvailableCrops() {
+  return [...new Set(DISEASES.map((d) => d.crop))].sort();
+}

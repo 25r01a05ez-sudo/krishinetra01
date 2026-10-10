@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-ink;
+  }
+  :focus-visible {
+    outline: 3px solid #22C55E;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── RTL & Urdu font support ──────────────────────────────── */
+  html.lang-ur {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+  }
+  html.lang-ur body {
+    line-height: 2;
+    font-size: 17px;
+  }
+  html.lang-ur h1, html.lang-ur h2, html.lang-ur h3, html.lang-ur h4 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    letter-spacing: 0;
+  }
+
+  /* Telugu font hints */
+  html[lang="te"] body {
+    font-family: 'Noto Sans Telugu', 'Inter', sans-serif;
+  }
+
+  /* Hindi/Devanagari font hints */
+  html[lang="hi"] body {
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+
+  /* RTL direction helpers */
+  [dir="rtl"] .flex-row-reverse-rtl { flex-direction: row-reverse; }
+  [dir="rtl"] select { text-align: right; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-forest text-white shadow-soft hover:bg-deep hover:shadow-lift active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-forest/25 bg-white text-forest hover:border-forest/50 hover:bg-mint active:scale-[0.98];
+  }
+  .btn-gold {
+    @apply btn bg-gold text-ink shadow-soft hover:brightness-95 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-forest hover:bg-mint;
+  }
+  .btn-sm {
+    @apply min-h-[40px] px-4 py-2 text-sm;
+  }
+  .card {
+    @apply rounded-2xl border border-forest/10 bg-white p-5 shadow-soft sm:p-6;
+  }
+  .card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:shadow-lift;
+  }
+  .glass {
+    @apply border border-white/60 bg-white/70 backdrop-blur-md;
+  }
+  .input {
+    @apply min-h-[48px] w-full rounded-xl border border-forest/20 bg-white px-4 py-2.5 text-base text-ink placeholder:text-ink/45 focus:border-fresh focus:outline-none focus:ring-2 focus:ring-fresh/40;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .section-title {
+    @apply text-3xl font-bold sm:text-4xl;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-forest;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.leaf-pattern {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.12) 0, transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(250, 204, 21, 0.1) 0, transparent 35%);
+}
